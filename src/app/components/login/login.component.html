@@ -1,0 +1,73 @@
+
+<div class="container mt-5 regester">
+  <h2 class="text-center mb-4 h22h">Welcome back</h2>
+
+  <form [formGroup]="Loginform" (ngSubmit)="Loginsubmit()" action="#" method="POST">
+
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email"  formControlName="email" class="form-control" id="email" placeholder="Email" required>
+            @if (Loginform.get('email')?.errors && Loginform.get('email')?.touched)
+            {
+            <div class="alert alert-danger">
+            @if (Loginform.get('email')?.errors?.['required'])
+            {
+            <p>Please enter the email.</p>
+            }
+            @else if (Loginform.get('email')?.errors?.['email'])
+            {
+              <p>Please enter the email correctly.</p>
+              }
+            </div>
+            }
+              </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password" required>
+              @if (Loginform.get('password')?.errors && Loginform.get('password')?.touched)
+              {
+<div class="alert alert-danger">
+                @if (Loginform.get('password')?.errors?.['required'])
+                {
+                  <p>Please enter the password.</p>
+                }
+                @else if (Loginform.get('password')?.errors?.['pattern'])
+                {
+                  <p>Please enter the password correctly.</p>
+                }
+</div>
+              }
+              </div>
+
+            @if (Loginform.errors)
+            {
+              <div class="alert alert-danger">
+            <p>matchimg</p>
+              </div>
+            }
+
+     <!-- Forgot Password -->
+    <div class="mb-3">
+      <a href="#" class="text-muted">Forgot password?</a>
+    </div>
+
+    <!-- Submit Button -->
+    <button  [disabled]="Loginform.invalid||isloding" type="submit" class="btn btn-custom w-100">Sign in
+       @if (isloding) { <span><i class="fas fa-spin fa-spinner"></i></span>}
+    </button>
+ <p class="text-center mt-1">
+      <a href="/register">Don’t have an account? Register</a>
+    </p>
+      @if (message) {<h1 class="alert alert-danger">{{message}}</h1>}
+
+  </form>
+</div>
+
+
+
+
+
+
+
+

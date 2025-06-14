@@ -1,0 +1,42 @@
+/* تحسين شكل اللينكات داخل الـ Navbar */
+.navbar .nav-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 15px;
+  color: #333 !important;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+/* تأثير الـ Hover */
+.navbar .nav-link:hover {
+  background-color: #006d87;
+  color: #fff !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين الـ Logo */
+.navbar .log {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #00809d;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .log i {
+  margin-right: 8px;
+}
+
+/* Responsive تحسين للموبايل */
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  .navbar .log {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,13 @@
+.dropdown-toggle {
+  min-width: 120px;
+  text-align: start;
+}
+.colo{
+   color: #00809d
+}
+.colop{
+    background-color: hsl(205.37deg 48.5% 63.3%);
+    color: white;
+    font-size: 15px;
+}
+

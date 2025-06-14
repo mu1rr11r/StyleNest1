@@ -1,0 +1,208 @@
+<div class="container mt-5 regester">
+  <h2 class="text-center mb-4 h22h">Create an account</h2>
+
+  <form [formGroup]="Registerform" (ngSubmit)="Registersubmit()" action="#" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+
+                <input 
+                 type="text"formControlName="name" class="form-control" id="name" placeholder="Name" required>
+@if (Registerform.get('name')?.errors && (Registerform.get('name')?.touched|| Registerform.get('name')?.dirty))
+{
+            <div class="alert alert-danger">
+            @if (Registerform.get('name')?.errors?.['required'])
+            {
+              <p>Please enter the name.</p>
+            }
+            @else if (Registerform.get('name')?.errors?.['minLength'])
+            {
+              <p>Please enter the name correctly.</p>
+            }
+          @else if (Registerform.get('name')?.errors?.['maxLength'])
+          {
+              <p>Please enter the name correctly.</p>
+          }
+          </div>
+}
+              </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" formControlName="phone" class="form-control" id="phone" placeholder="Phone" required>
+            @if (Registerform.get('phone')?.errors && Registerform.get('phone')?.touched){
+              <div class="alert alert-danger">
+            @if (Registerform.get('phone')?.errors?.['required'])
+            {
+              <p>Please enter the phone number.</p>
+            }
+            @else if (Registerform.get('phone')?.errors?.['pattern'])
+            {
+              <p>Please enter the phone number correctly.</p>
+            }
+          </div>
+            }
+              </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email"  formControlName="email" class="form-control" id="email" placeholder="Email" required>
+            @if (Registerform.get('email')?.errors && Registerform.get('email')?.touched)
+            {
+            <div class="alert alert-danger">
+            @if (Registerform.get('email')?.errors?.['required'])
+            {
+            <p>Please enter the email.</p>
+            }
+            @else if (Registerform.get('email')?.errors?.['email'])
+            {
+              <p>Please enter the email correctly.</p>
+              }
+            </div>
+            }
+              </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password" required>
+              @if (Registerform.get('password')?.errors && Registerform.get('password')?.touched)
+              {
+<div class="alert alert-danger">
+                @if (Registerform.get('password')?.errors?.['required'])
+                {
+                  <p>Please enter the password.</p>
+                }
+                @else if (Registerform.get('password')?.errors?.['pattern'])
+                {
+                  <p>Please enter the password correctly.</p>
+                }
+</div>
+              }
+              </div>
+
+    <!-- Confirm Password -->
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password"formControlName="rePassword" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+            @if (Registerform.errors)
+            {
+              <div class="alert alert-danger">
+            <p>matchimg</p>
+              </div>
+            }
+
+    <!-- Submit -->
+    <button [disabled]="Registerform.invalid||isloding" type="submit" class="btn btn-custom w-100">Create Account
+     @if (isloding) { <span><i class="fas fa-spin fa-spinner"></i></span>}
+    </button>
+
+    <p class="text-center mt-2 text-muted">
+      By creating an account, you agree to the Terms of Service and Privacy Policy.
+    </p>
+    <p class="text-center mt-1">
+      <a href="/login">Already have an account? Login here</a>
+    </p>
+      @if (message) {<h1 class="alert alert-danger">{{message}}</h1>}
+
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+
+
+<div class="container mt-5 regester">
+        <h2 class="text-center mb-4 h22h">Create an account</h2>
+        <form [formGroup]="Registerform" (ngSubmit)="Registersubmit()">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text"formControlName="name" class="form-control" id="name" placeholder="Name" required>
+      @if (Registerform.get('name')?.errors && Registerform.get('name')?.touched)
+  {
+            <div class="alert alert-danger">
+            @if (Registerform.get('name')?.errors?.['required'])
+            {
+              <p>Please enter the name.</p>
+            }
+            @else if (Registerform.get('name')?.errors?.['minLength'])
+            {
+              <p>Please enter the name correctly.</p>
+            }
+          @else if (Registerform.get('name')?.errors?.['maxLength'])
+          {
+              <p>Please enter the name correctly.</p>
+          }
+          </div>
+  }
+              </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" formControlName="phone" class="form-control" id="phone" placeholder="Phone" required>
+            @if (Registerform.get('phone')?.errors && Registerform.get('phone')?.touched){
+              <div class="alert alert-danger">
+            @if (Registerform.get('phone')?.errors?.['required'])
+            {
+              <p>Please enter the phone number.</p>
+            }
+            @else if (Registerform.get('phone')?.errors?.['pattern'])
+            {
+              <p>Please enter the phone number correctly.</p>
+            }
+          </div>
+            }
+              </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email"  formControlName="email" class="form-control" id="email" placeholder="Email" required>
+            @if (Registerform.get('email')?.errors && Registerform.get('email')?.touched)
+            {
+            <div class="alert alert-danger">
+            @if (Registerform.get('email')?.errors?.['required'])
+            {
+            <p>Please enter the email.</p>
+            }
+            @else if (Registerform.get('email')?.errors?.['email'])
+            {
+              <p>Please enter the email correctly.</p>
+              }
+            </div>
+            }
+              </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password" required>
+              @if (Registerform.get('password')?.errors && Registerform.get('password')?.touched)
+              {
+<div class="alert alert-danger">
+                @if (Registerform.get('password')?.errors?.['required'])
+                {
+                  <p>Please enter the password.</p>
+                }
+                @else if (Registerform.get('password')?.errors?.['pattern'])
+                {
+                  <p>Please enter the password correctly.</p>
+                }
+</div>
+              }
+              </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password"formControlName="rePassword" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+            @if (Registerform.errors)
+            {
+              <div class="alert alert-danger">
+            <p>matchimg</p>
+              </div>
+            }
+            <button [disabled]="Registerform.invalid" type="submit" class="btn btn-custom w-100">Create Account
+
+            </button>
+          <p class="text-center mt-2 text-muted">By creating an account, you agree to the Terms of Service and Privacy Policy.</p>
+            <p class="text-center mt-1"><a routerLink="/login">Already have an account? Login here</a></p>
+        </form>
+    </div> -->

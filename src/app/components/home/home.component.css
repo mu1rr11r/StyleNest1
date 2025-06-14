@@ -1,0 +1,26 @@
+ .banner {
+      background: linear-gradient(to bottom, #ddd, #999);
+      border-radius: 15px;
+      text-align: left;
+      padding: 40px;
+      color: #00809d; /* لون الكلام داخل البانر */
+      position: relative;
+      overflow: hidden;
+    }
+    .banner img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+    .product-card img {
+      max-height: 220px;
+      object-fit: cover;
+    }
+
+    .Featured{
+            color: #00809d; /* لون الكلام داخل البانر */
+
+    }

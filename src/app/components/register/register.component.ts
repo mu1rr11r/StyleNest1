@@ -49,7 +49,12 @@ export class RegisterComponent {
         next:(res)=>{
                 if(res.message=='success')
       {
-        this.Router.navigate(['/login'])
+
+        if (res.message == 'success') {
+            localStorage.setItem('username', this.Registerform.value.name);
+  this.Router.navigate(['/login']);
+}
+
       }
                     this.isloding=false
 

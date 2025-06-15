@@ -38,6 +38,7 @@ export class LoginComponent {
                   if(res.message=='success')
         {
           localStorage.setItem('userToken',res.token)
+            localStorage.setItem('useremail', this.Loginform.value.email);
           this._AuthService.savauserdata()
           this.Router.navigate(['/home'])
         }

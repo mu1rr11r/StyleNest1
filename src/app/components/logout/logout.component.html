@@ -3,13 +3,14 @@
 
   <!-- Account Details -->
   <div class="d-flex justify-content-between align-items-start mb-4">
-    <div class="d-flex align-items-center">
-      <img src="assets/profile.png" class="rounded-circle me-3" style="width: 60px; height: 60px;" alt="Profile" />
-      <div>
-        <h5 class="mb-0">Moutasem mahmoud </h5>
-        <small class="text-muted">Moutasem.mahmoudsc5.com</small>
-      </div>
-    </div>
+<div class="d-flex align-items-center p-3 bg-light rounded">
+  <img src="assets/profile.png" class="rounded-circle me-3" style="width: 60px; height: 60px;" alt="Profile" />
+  <div>
+    <h5 class="mb-1 text-dark">{{ username }}</h5>
+    <p class="mb-0 text-primary">{{ useremail }}</p>
+  </div>
+</div>
+
     <button class="btn btn-light" aria-label="Edit Profile">
       <i class="fa-solid fa-pen"></i>
     </button>
@@ -88,6 +89,6 @@
 
   <!-- Logout Button -->
   <div class="text-center mt-4">
-    <button class="btn btn-danger w-100 py-2 border" style="max-width: 300px;">Log out</button>
+    <button class="btn btn-danger w-100 py-2 border" style="max-width: 300px;" (click)="_AuthService.logout()">Log out</button>
   </div>
 </div>

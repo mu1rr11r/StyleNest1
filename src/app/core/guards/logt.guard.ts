@@ -3,7 +3,8 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const logtGuard: CanActivateFn = (route, state) => {
 const _Router=inject(Router)
-  if(localStorage.getItem('userToken')!==null)
+if(typeof localStorage !=='undefined'){
+    if(localStorage.getItem('userToken')!==null)
     {
           _Router.navigate(['/logout'])
 
@@ -11,4 +12,9 @@ const _Router=inject(Router)
   }
   else{
     return true;
-  }};
+  }
+}
+else{
+  return false
+}
+};

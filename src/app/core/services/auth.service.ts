@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environments } from '../environments/environments';
 import { jwtDecode } from 'jwt-decode';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ export class AuthService {
 
   userdata:any=null
 private readonly HttpClient_:HttpClient=inject(HttpClient);
+private readonly _Router=inject(Router);
+
 
 sendRegester(Date:object):Observable<any>
 {
@@ -27,5 +30,11 @@ savauserdata(): void {
    this.userdata= jwtDecode(localStorage.getItem('userToken')!);
    console.log("cssd",this.userdata)
   }
+}
+
+logout(){
+  localStorage.removeItem('userToken');
+  this.userdata=null;
+  this._Router.navigate(['/login'])
 }
 }

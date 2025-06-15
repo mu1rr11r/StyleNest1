@@ -19,8 +19,24 @@
       max-height: 220px;
       object-fit: cover;
     }
-
     .Featured{
-            color: #00809d; /* لون الكلام داخل البانر */
-
+            color: #00809d;
     }
+    .CO{
+      color: #00809d;
+    }
+.product-card .add-to-cart-btn {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  background-color: #00809d;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.product-card:hover .add-to-cart-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  background-color: #00809d;
+}

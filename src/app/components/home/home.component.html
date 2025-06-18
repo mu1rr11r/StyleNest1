@@ -1,3 +1,76 @@
+<section>
+<div class="container py-4">
+  <div class="row g-3 align-items-stretch">
+
+    <!-- الصورة الكبيرة على اليسار -->
+    <div class="col-md-8">
+
+
+        <owl-carousel-o [options]="customOptionscares">
+    <ng-template carouselSlide>
+          <img src="../../../assets/prodects/pexels-daniel-sperindeo-1106409-16958879.jpg" height="300px" class="banner-img full-height rounded w-100" alt="Main Banner">
+    </ng-template>
+    <ng-template carouselSlide>
+          <img src="../../../assets/prodects/pexels-javon-swaby-197616-2783873.jpg" height="300px" class="banner-img full-height rounded w-100" alt="Main Banner">
+    </ng-template>
+    <ng-template carouselSlide>
+          <img src="../../../assets/prodects/pexels-madebymath-90946.jpg" height="300px" class="banner-img full-height rounded w-100" alt="Main Banner">
+    </ng-template>
+    <ng-template carouselSlide>
+          <img src="../../../assets/prodects/pexels-planka-29709955.jpg" height="300px" class="banner-img full-height rounded w-100" alt="Main Banner">
+    </ng-template>
+    <ng-template carouselSlide>
+          <img src="../../../assets/prodects/pexels-sai-manohar-1836052-17689983.jpg" height="300px" class="banner-img full-height rounded w-100" alt="Main Banner">
+    </ng-template>
+
+  </owl-carousel-o>
+    </div>
+
+    <!-- العمود اللي فيه صورتين فوق بعض -->
+    <div class="col-md-4 d-flex flex-column">
+      <div class="img-stack mb-3">
+        <img src="../../../assets/prodects/sdsd1.jpg"height="150px" class="banner-img rounded w-75" alt="Top Image">
+      </div>
+      <div class="img-stack">
+        <img src="../../../assets/prodects/sddsf2.jpg"height="150px" class="banner-img rounded w-75" alt="Bottom Image">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="my-2">
+  <h2 >prodect</h2>
+   <owl-carousel-o [options]="customOptionscatgery">
+
+@for (car of cetegerylist; track car._id)
+{
+          <ng-template carouselSlide >
+      <div>
+        <img [src]="car.image" height="240px" class="w-100" [alt]="car.name">
+        <h5>{{car.name}}</h5>
+      </div>
+      </ng-template>
+}
+
+  </owl-carousel-o>
+</section>
+
+
 <section class="container my-5">
   <h2 class="CO mb-4">Product</h2>
   <div class="row g-4">

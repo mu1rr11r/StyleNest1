@@ -1,0 +1,18 @@
+.brand-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+}
+
+.brand-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.brand-logo {
+  max-height: 90px;
+  object-fit: contain;
+  display: block;
+}

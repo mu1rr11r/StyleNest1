@@ -1,0 +1,35 @@
+.cart-title {
+  color: #00809d;
+}
+
+.cart-icon {
+  color: #00809d;
+}
+
+.btn-custom-icon {
+  border-color: #00809d !important;
+  color: white;
+}
+
+/* زر الدفع */
+.checkout-btn {
+  background-color: #00809d;
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #00687d;
+}
+
+/* الكارت نفسه */
+.cart-item {
+  transition: transform 0.2s;
+}
+.cart-item:hover {
+  transform: scale(1.01);
+}
+
+/* كارت ملخص الطلب */
+.order-summary-card {
+  background-color: #f8f9fa;
+}

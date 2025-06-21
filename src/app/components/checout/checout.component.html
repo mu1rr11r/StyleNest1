@@ -1,0 +1,43 @@
+<section class="container my-5 delivery-form">
+  <div class="text-center mb-5">
+    <h2 class="form-title">Delivery Information</h2>
+  </div>
+
+  <form  class="mx-auto" style="max-width: 900px;">
+    <div class="row g-4">
+      <!-- العمود الأول -->
+      <div class="col-md-6">
+        <!-- Phone Number -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" id="phone" placeholder="Enter your phone number" />
+        </div>
+
+        <!-- City -->
+        <div class="mb-3">
+          <label for="city" class="form-label">City</label>
+          <input type="text" class="form-control" id="city" placeholder="Enter your city" />
+        </div>
+      </div>
+
+      <!-- العمود الثاني -->
+      <div class="col-md-6">
+        <!-- Governorate -->
+        <div class="mb-3">
+          <label for="governorate" class="form-label">Governorate</label>
+          <select class="form-select" id="governorate">
+            <option selected disabled>Select your governorate</option>
+            <option value="cairo">Cairo</option>
+            <option value="alexandria">Alexandria</option>
+            <option value="giza">Giza</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- زرار الإرسال -->
+    <div class="text-center mt-4">
+      <button type="submit" class="btn custom-btn px-4">Proceed</button>
+    </div>
+  </form>
+</section>

@@ -37,4 +37,16 @@ logout(){
   this.userdata=null;
   this._Router.navigate(['/login'])
 }
+
+setemailValidetor(Date:object):Observable<any>{
+  return this.HttpClient_.post(`${environments.baseurl}/api/v1/auth/forgotPasswords`,Date)
+}
+
+VerifyResetCode(Date:Object):Observable<any>{
+  return this.HttpClient_.post(`${environments.baseurl}/api/v1/auth/verifyResetCode`,Date)
+}
+
+resetpassowerd(Date:Object):Observable<any>{
+ return this.HttpClient_.put(`${environments.baseurl}/api/v1/auth/resetPassword`,Date)
+}
 }

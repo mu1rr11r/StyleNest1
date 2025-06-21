@@ -61,7 +61,7 @@
 {
           <ng-template carouselSlide >
       <div>
-        <img [src]="car.image" height="240px" class="w-100" [alt]="car.name">
+        <img [src]="car.image" height="150px" class="w-100" [alt]="car.name">
         <h5>{{car.name}}</h5>
       </div>
       </ng-template>
@@ -71,28 +71,6 @@
 </section>
 
 
-<section class="container my-5">
-  <h2 class="CO mb-4">Product</h2>
-  <div class="row g-4">
-    @for (Product of Prodectlist; track Product.id) {
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="border p-2 rounded h-100 product-card">
-          <img [src]="Product.imageCover" class="w-100 mb-2 rounded" [alt]="Product.title">
-          <h5 class="CO mb-1">{{ Product.category.name }}</h5>
-          <h6 class="text-dark mb-2">{{ Product.title }}</h6>
 
-          <div class="d-flex justify-content-between align-items-center">
-            <span class="fw-bold">{{ Product.price }} EGP</span>
-            <div>
-              <span><i class="fas fa-star text-warning"></i></span>
-              <span class="text-muted">{{ Product.ratingsAverage }}</span>
-            </div>
-          </div>
-          <button class="btn btn-primary w-100 mt-2 add-to-cart-btn">Add to Cart</button>
-        </div>
-      </div>
-    }
-  </div>
-</section>
 
 

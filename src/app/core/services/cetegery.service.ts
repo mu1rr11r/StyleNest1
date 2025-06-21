@@ -14,7 +14,7 @@ export class CetegeryService {
  {
   return this._HttpClient.get(`${environments.baseurl}/api/v1/categories`)
  }
-  getspecificcategery(id:string):Observable<any>
+  getspecificcategery(id:string|null):Observable<any>
  {
   return this._HttpClient.get(`${environments.baseurl}/api/v1/categories/${id}`)
  }

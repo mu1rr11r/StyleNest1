@@ -12,14 +12,18 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { authGuard } from './core/guards/auth.guard';
 import { logtGuard } from './core/guards/logt.guard';
+import { DetalsComponent } from './components/detals/detals.component';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+import { ProductComponent } from './components/product/product.component';
+import { ChecoutComponent } from './components/checout/checout.component';
 
 export const routes: Routes = [
   {path:'',component:AuthLayoutComponent,canActivate:[logtGuard],
     children:[
       {path:'',redirectTo:'login',pathMatch:'full'},
       {path:'login',component:LoginComponent},
-      {path:'register',component:RegisterComponent,
-      }
+      {path:'register',component:RegisterComponent},
+      {path:'forgetpassword',component:ForgetpasswordComponent},
     ]
   },
   {path:'',component:BlackLayoutComponent,canActivate:[authGuard],
@@ -29,8 +33,13 @@ export const routes: Routes = [
           {path:'brands',component:BrandsComponent},
           {path:'cart', component:CartComponent},
           {path:'categories',component:CategoriesComponent},
+                    {path:'product',component:ProductComponent},
+
           {path:'footer',component:FooterComponent},
-          {path:'logout',component:LogoutComponent}
+          {path:'checout',component:ChecoutComponent},
+
+          {path:'logout',component:LogoutComponent},
+          {path:'detals/:id',component:DetalsComponent}
         ]
   },
   {path:"**",component:NotfoundComponent}

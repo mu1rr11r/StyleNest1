@@ -1,1 +1,76 @@
-<p>cart works!</p>
+<div class="container my-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold cart-title mb-0">
+      <i class="fas fa-shopping-cart me-2 cart-icon"></i> Shopping Cart
+    </h2>
+  <button class="btn btn-danger fw-semibold rounded-3 px-4 py-2" (click)="clearCart()">
+    <i class="fas fa-trash me-2"></i> Clear Cart
+  </button>
+  </div>
+
+
+  <div class="row g-4">
+    <!-- Cart Items -->
+    <div class="col-lg-8">
+      @for (catitem of cartDatels.products; track catitem.product._id) {
+
+        <div class="cart-item d-flex justify-content-between align-items-center mb-4 p-3 border rounded-4 shadow-sm bg-white">
+          <div class="d-flex flex-column justify-content-between">
+            <h3 class="mb-2 fw-semibold text-info-emphasis">{{catitem.product.title}}</h3>
+            <p class="text-primary mb-3 small">{{catitem.price}}$ Shopping Cart</p>
+            <button  (click)="delet(catitem.product._id)" class="btn btn-sm btn-outline-danger rounded-pill">
+              <i class="fa-solid fa-trash me-1 "></i> Remove
+            </button>
+          </div>
+
+          <div class="d-flex align-items-center gap-4 flex-wrap">
+            <img [src]="catitem.product.imageCover" class="img-fluid rounded-4" width="120" [alt]="catitem.product.title">
+
+            <div class="d-flex align-items-center gap-2">
+              <button (click)="Updatcount(catitem.product._id,catitem.count +1)" class="btn btn-sm rounded-circle text-white btn-custom-icon bg-success border-0">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <span class="fw-medium text-primary">{{catitem.count}}</span>
+
+              <button (click)="Updatcount(catitem.product._id,catitem.count -1)" class="btn btn-sm rounded-circle text-white btn-custom-icon bg-danger border-0">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Order Summary -->
+    <div class="col-lg-4">
+      <div class="card order-summary-card border-0 shadow-sm rounded-4 p-4 bg-light">
+        <h5 class="fw-bold mb-4 text-center text-info-emphasis">Order Summary</h5>
+
+        <div class="d-flex justify-content-between mb-3">
+          <span class="text-muted">Subtotal</span>
+          <span class="fw-medium text-primary">{{cartDatels.totalCartPrice}}$</span>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+          <span class="text-muted">Shipping</span>
+          <span class="text-success fw-medium">Free</span>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+          <span class="text-muted">Taxes</span>
+          <span class="fw-medium text-primary">$0.00</span>
+        </div>
+
+        <hr class="my-3">
+
+        <div class="d-flex justify-content-between fw-bold fs-5 mb-4">
+          <span class="text-info-emphasis">Total</span>
+          <span class="text-primary">{{cartDatels.totalCartPrice}}$</span>
+        </div>
+
+        <button class="btn w-100 py-3 text-white fw-semibold rounded-3 checkout-btn"routerLink="/checout">
+          <i class="bi bi-credit-card me-2" ></i> Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

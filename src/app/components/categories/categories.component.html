@@ -1,1 +1,16 @@
-<p>categories works!</p>
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Shop by Category</h2>
+    <div class="row g-4">
+      @for (catageryd of catagery; track catageryd._id) {
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card brand-card text-center h-100 border-0 shadow-sm p-3 hover-card">
+            <img [src]="catageryd.image" [alt]="catageryd.name" class="brand-logo mx-auto mb-3 img-fluid" style="max-height: 800px; object-fit: contain;" />
+            <h6 class="fw-bold text-dark mb-1">{{ catageryd.name }}</h6>
+            <small class="text-muted">{{ catageryd.slug }}</small>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

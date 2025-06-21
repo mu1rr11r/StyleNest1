@@ -4,11 +4,12 @@ import { Iprodact } from '../../core/interfaces/iprodact';
 import { CetegeryService } from '../../core/services/cetegery.service';
 import { Icetegery } from '../../core/interfaces/icetegery';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselModule],
+  imports: [CarouselModule,RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -18,7 +19,6 @@ export class HomeComponent implements OnInit
   private readonly   _CetegeryService=inject(CetegeryService)
 
 
- Prodectlist:Iprodact[]=[]
  cetegerylist:Icetegery[]=[]
 customOptionscatgery: OwlOptions = {
     loop: true,
@@ -84,14 +84,6 @@ customOptionscatgery: OwlOptions = {
       console.log(err)
     },
   })
-     this._ProdectsService.getAllprodect().subscribe({
-      next:(res)=>{
-      console.log(res.data);
-      this.Prodectlist=res.data;
-      },
-      error:(err)=>{
-        console.log(err)
-      }
-     })
+
  }
 }

@@ -15,7 +15,7 @@ export class ProdectsService {
     return this._HttpClient.get(`${environments.baseurl}/api/v1/products`)
   }
 
-  getspecificprodect(id:string):Observable<any>
+  getspecificprodect(id:string|null):Observable<any>
   {
     return this._HttpClient.get(`${environments.baseurl}/api/v1/products/${id}`)
   }

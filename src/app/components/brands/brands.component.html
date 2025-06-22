@@ -1,19 +1,19 @@
 <section class="py-5">
   <div class="container">
     <div class="row g-4">
-
       @for (breandss of brends; track breandss._id) {
         <div class="col-6 col-md-4 col-lg-2">
           <a class="text-decoration-none" [routerLink]="['/detals', breandss._id]">
-            <div class="card brand-card text-center h-100 p-3 shadow-sm border-0">
-              <img [src]="breandss.image" [alt]="breandss.name" class="brand-logo mx-auto mb-3 img-fluid" />
-              <h6 class="fw-bold text-dark mb-1 ">{{ breandss.name }}</h6>
-              <small class="text-muted">{{ breandss.slug }}</small>
+            <div class="card brand-card text-center h-100 shadow-sm border-0">
+              <img [src]="breandss.image" [alt]="breandss.name" class="brand-logo mx-auto img-fluid mb-3" />
+              <div class="brand-info">
+                <h6 class="fw-semibold text-dark mb-1 text-truncate">{{ breandss.name }}</h6>
+                <small class="text-muted text-truncate d-block">{{ breandss.slug }}</small>
+              </div>
             </div>
           </a>
         </div>
       }
-
     </div>
   </div>
 </section>

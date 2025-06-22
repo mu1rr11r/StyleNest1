@@ -3,6 +3,7 @@ import { CartService } from '../../core/services/cart.service';
 import { Icart } from '../../core/interfaces/icart';
 import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { OrderService } from '../../core/services/order.service';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 export class CartComponent implements OnInit {
   cartDatels:Icart={}as Icart
   private readonly _CartService = inject(CartService);
-  private readonly _ToastrService=inject(ToastrService)
+  private readonly _ToastrService=inject(ToastrService);
+
 
   ngOnInit(): void {
     this._CartService.getProductcart().subscribe({

@@ -67,8 +67,8 @@
           <span class="text-primary">{{cartDatels.totalCartPrice}}$</span>
         </div>
 
-        <button class="btn w-100 py-3 text-white fw-semibold rounded-3 checkout-btn"routerLink="/checout">
-          <i class="bi bi-credit-card me-2" ></i> Checkout
+        <button [routerLink]="['/checout',cartDatels._id]" class="btn w-100 py-3 text-white fw-semibold rounded-3 checkout-btn">
+          <i class="bi bi-credit-card me-2" ></i>  Proceed
         </button>
       </div>
     </div>

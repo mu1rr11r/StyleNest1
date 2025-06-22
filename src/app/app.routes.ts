@@ -16,6 +16,7 @@ import { DetalsComponent } from './components/detals/detals.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ProductComponent } from './components/product/product.component';
 import { ChecoutComponent } from './components/checout/checout.component';
+import { AllordersComponent } from './components/allorders/allorders.component';
 
 export const routes: Routes = [
   {path:'',component:AuthLayoutComponent,canActivate:[logtGuard],
@@ -34,10 +35,9 @@ export const routes: Routes = [
           {path:'cart', component:CartComponent},
           {path:'categories',component:CategoriesComponent},
                     {path:'product',component:ProductComponent},
-
           {path:'footer',component:FooterComponent},
-          {path:'checout',component:ChecoutComponent},
-
+          {path:'checout/:id',component:ChecoutComponent},
+          {path:'allorders',component:AllordersComponent},
           {path:'logout',component:LogoutComponent},
           {path:'detals/:id',component:DetalsComponent}
         ]

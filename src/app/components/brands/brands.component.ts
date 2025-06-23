@@ -17,7 +17,6 @@ brends:Ibrand[]=[]
 ngOnInit():void{
   this._BrandService.brend().subscribe({
     next:(res)=>{
-      console.log(res.data)
       this.brends=res.data
     },
     error:(err)=>{

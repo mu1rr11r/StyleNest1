@@ -77,7 +77,6 @@ customOptionscatgery: OwlOptions = {
  ngOnInit(): void {
   this._CetegeryService.getallcategery().subscribe({
     next:(res)=>{
-      console.log(res.data)
       this.cetegerylist=res.data;
     },
     error:(err)=>{

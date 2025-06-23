@@ -23,15 +23,13 @@ private readonly _ToastrService = inject(ToastrService);
 
      this._ProdectsService.getAllprodect().subscribe({
       next:(res)=>{
-      console.log(res.data);
       this.Prodectlist=res.data;
       },
       error:(err)=>{
         console.log(err)
       }
-     })
+    })
  }
-
 
 addcerd(id: string): void {
   this._CartService.addProductToCart(id).subscribe({
@@ -45,5 +43,4 @@ addcerd(id: string): void {
     }
   });
 }
-
 }

@@ -51,7 +51,6 @@ customOptionsdetals: OwlOptions = {
         let idproducts= p.get('id');
             this._ProdectsService.getspecificprodect(idproducts).subscribe({
       next:(res)=>{
-        console.log(res.data)
         this.detiles=res.data;
       },
       error:(err)=>{

@@ -6,6 +6,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration()
@@ -13,7 +14,9 @@ export const appConfig: ApplicationConfig = {
   ,importProvidersFrom(BrowserAnimationsModule),
        provideToastr(),
     provideAnimations(),
-    importProvidersFrom(BrowserAnimationsModule)
+    importProvidersFrom(BrowserAnimationsModule),
+        importProvidersFrom(NgxSpinnerModule )
+
 
 ]
 };

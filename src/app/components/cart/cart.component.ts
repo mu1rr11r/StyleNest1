@@ -4,6 +4,7 @@ import { Icart } from '../../core/interfaces/icart';
 import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { OrderService } from '../../core/services/order.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-cart',
@@ -16,12 +17,16 @@ export class CartComponent implements OnInit {
   cartDatels:Icart={}as Icart
   private readonly _CartService = inject(CartService);
   private readonly _ToastrService=inject(ToastrService);
+  private readonly   _NgxSpinnerService=inject(NgxSpinnerService)
 
 
   ngOnInit(): void {
+    this._NgxSpinnerService.show('loding-1')
     this._CartService.getProductcart().subscribe({
       next:(res)=>{
         this.cartDatels=res.data
+            this._NgxSpinnerService.hide('loding-1')
+
       },
       error:(err)=>{
         console.log(err)

@@ -6,6 +6,7 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { CarouselService } from 'ngx-owl-carousel-o/lib/services/carousel.service';
 import { CartService } from '../../core/services/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-detals',
@@ -19,6 +20,7 @@ export class DetalsComponent implements OnInit {
   private readonly _ActivatedRoute=inject(ActivatedRoute)
   private readonly _ProdectsService=inject(ProdectsService)
   private readonly _ToastrService=inject(ToastrService)
+  private readonly _NgxSpinnerService=inject(NgxSpinnerService)
   detiles:Iprodact|null=null;
 customOptionsdetals: OwlOptions = {
   loop: true,
@@ -46,12 +48,15 @@ customOptionsdetals: OwlOptions = {
 };
 
   ngOnInit(): void {
+    this._NgxSpinnerService.show('loding-1')
     this._ActivatedRoute.paramMap.subscribe({
       next:(p)=>{
         let idproducts= p.get('id');
             this._ProdectsService.getspecificprodect(idproducts).subscribe({
       next:(res)=>{
         this.detiles=res.data;
+            this._NgxSpinnerService.hide('loding-1')
+
       },
       error:(err)=>{
         console.log(err)

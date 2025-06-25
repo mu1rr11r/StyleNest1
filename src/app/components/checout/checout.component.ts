@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { OrderService } from '../../core/services/order.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-checout',
@@ -13,6 +14,7 @@ import { OrderService } from '../../core/services/order.service';
 export class ChecoutComponent implements OnInit{
   private readonly _ActivatedRoute=inject(ActivatedRoute)
       private readonly _OrderService=inject(OrderService)
+      private readonly _NgxSpinnerService=inject(NgxSpinnerService)
 
   cartid:string|null="";
   order:FormGroup=new FormGroup({
@@ -21,10 +23,13 @@ export class ChecoutComponent implements OnInit{
     city:new FormControl(null),
   })
     ngOnInit(): void {
+      this._NgxSpinnerService.show('loding-1')
     this._ActivatedRoute.paramMap.subscribe({
       next:(params)=>{
     this.cartid= params.get('id')
     console.log(this.cartid)
+          this._NgxSpinnerService.hide('loding-1')
+
       }
     })
   }

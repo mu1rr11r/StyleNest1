@@ -5,6 +5,7 @@ import { Iprodact } from '../../core/interfaces/iprodact';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../../core/services/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-product',
@@ -17,13 +18,16 @@ export class ProductComponent {
   private readonly  _ProdectsService=inject(ProdectsService)
   private readonly _CartService=inject(CartService)
 private readonly _ToastrService = inject(ToastrService);
+private readonly _NgxSpinnerService=inject(NgxSpinnerService)
  Prodectlist:Iprodact[]=[]
 
    ngOnInit(): void {
-
+   this._NgxSpinnerService.show('loding-1')
      this._ProdectsService.getAllprodect().subscribe({
       next:(res)=>{
       this.Prodectlist=res.data;
+         this._NgxSpinnerService.hide('loding-1')
+
       },
       error:(err)=>{
         console.log(err)

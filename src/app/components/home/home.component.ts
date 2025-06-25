@@ -5,6 +5,7 @@ import { CetegeryService } from '../../core/services/cetegery.service';
 import { Icetegery } from '../../core/interfaces/icetegery';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { RouterLink } from '@angular/router';
+import { NgxSpinnerComponent, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit
 {
  private readonly   _ProdectsService=inject(ProdectsService)
   private readonly   _CetegeryService=inject(CetegeryService)
+  private readonly  _NgxSpinnerService=inject(NgxSpinnerService)
 
 
  cetegerylist:Icetegery[]=[]
@@ -75,9 +77,12 @@ customOptionscatgery: OwlOptions = {
     nav: false
   }
  ngOnInit(): void {
+  this._NgxSpinnerService.show('loding-1')
   this._CetegeryService.getallcategery().subscribe({
     next:(res)=>{
       this.cetegerylist=res.data;
+        this._NgxSpinnerService.hide('loding-1')
+
     },
     error:(err)=>{
       console.log(err)

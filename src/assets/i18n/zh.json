@@ -1,0 +1,13 @@
+
+
+{
+  "navbar":{
+  "Home": "主页",
+  "Brand": "品牌",
+  "Category": "类别",
+  "Product": "产品"
+},
+  "StyleNest": {
+    "StyleNest": "风格之巢"
+  }
+}

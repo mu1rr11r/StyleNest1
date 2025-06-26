@@ -1,0 +1,11 @@
+{
+  "navbar":{
+  "Home": "Home",
+  "Brand": "Brand",
+  "Category": "Category",
+  "Product": "Product"
+},
+  "StyleNest": {
+    "StyleNest": "StyleNest"
+  }
+}

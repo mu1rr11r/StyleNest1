@@ -1,0 +1,13 @@
+
+
+{
+  "navbar":{
+  "Home": "Главная",
+  "Brand": "Бренд",
+  "Category": "Категория",
+  "Product": "Продукт"
+},
+  "StyleNest": {
+    "StyleNest": "Гнездо стиля"
+  }
+}

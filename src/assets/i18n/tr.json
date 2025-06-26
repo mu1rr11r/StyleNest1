@@ -1,0 +1,11 @@
+{
+  "navbar": {
+    "Home": "Anasayfa",
+    "Brand": "Marka",
+    "Category": "Kategori",
+    "Product": "Ürün"
+  },
+  "StyleNest": {
+    "StyleNest": "Stil Yuvası"
+  }
+}
